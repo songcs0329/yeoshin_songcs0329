@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@actions": ["./actions"],
+      "@actions/*": ["./actions/*"],
+      "@apis": ["./apis"],
+      "@apis/*": ["./apis/*"],
+      "@components": ["./components"],
+      "@components/*": ["./components/*"],
+      "@reducers": ["./reducers"],
+      "@reducers/*": ["./reducers/*"],
+      "@styles": ["./styles"],
+      "@styles/*": ["./styles/*"],
+      "@types": ["./types"],
+      "@types/*": ["./types/*"],
+      "@utils": ["./utils"],
+      "@utils/*": ["./utils/*"]
+    }
+  }
+}
