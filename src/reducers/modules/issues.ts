@@ -1,19 +1,19 @@
-import { GET_ISSUES_ERROR, GET_ISSUES_REQUEST, GET_ISSUES_SUCCESS } from "@actions"
+import { GET_ISSUES_ERROR, GET_ISSUES_REQUEST, GET_ISSUES_SUCCESS, IssuesActionType } from "@actions"
 import { SuccessIssueItemType } from "@types"
 
-interface IssuesStateType {
+export interface IssuesStateType {
   isLoading: boolean
-  isError: string
-  dataList: [] | SuccessIssueItemType[]
+  errorMsg: string
+  list: [] | SuccessIssueItemType[]
 }
 
 const initialState: IssuesStateType = {
   isLoading: false,
-  isError: "",
-  dataList: [],
+  errorMsg: "",
+  list: [],
 }
 
-export const issuesReducer = (state = initialState, action: any) => {
+export const issuesReducer = (state = initialState, action: IssuesActionType) => {
   switch (action.type) {
     case GET_ISSUES_REQUEST:
       return {
@@ -24,13 +24,13 @@ export const issuesReducer = (state = initialState, action: any) => {
       return {
         ...state,
         isLoading: false,
-        dataList: action.payload,
+        list: action.payload,
       }
     case GET_ISSUES_ERROR:
       return {
         ...state,
         isLoading: false,
-        isError: action.payload,
+        errorMsg: action.payload,
       }
     default:
       return state
