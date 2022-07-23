@@ -4,15 +4,10 @@ import reset from "styled-reset"
 const GlobalStyles = createGlobalStyle`
 	${reset}
 	:root {
-		--color-black1: #111;
-		--color-black2: #222;
-		--color-black3: #333;
-		--color-black4: #444;
-		--color-black5: #555;
-		--color-black6: #666;
 		--color-white: #fff;
-		--color-red: #f72512;
-		--color-border: #ddd;
+		--color-red: #fe4411;
+		--color-bg: #14171f;
+		--color-gray: #30363d;
 		--color-layer: rgba(0,0,0,0.5);
 		--color-shaodw: rgba(0,0,0,0.1);
 	}
@@ -21,16 +16,18 @@ const GlobalStyles = createGlobalStyle`
 		margin: 0;
 		box-sizing: border-box;
 		word-break: break-all;
-		color: var(--color-black1);
+		color: var(--color-white);
 		overscroll-behavior: none;
 	}
 	html,
 	body {
 		overflow: auto;
 		height: 100%;
-		font-family: 'Noto Sans KR', sans-serif;
+		font-family: "Roboto";
+		background-color: var(--color-bg);
+		line-height: 1.3;
 		* {
-			font-family: 'Noto Sans KR', sans-serif;
+			font-family: "Roboto";
 			font-size: 12px;
 		}
 	}
