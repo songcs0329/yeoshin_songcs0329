@@ -6,10 +6,19 @@ export const GET_ISSUES_REQUEST = "issues/GET_ISSUES_REQUEST" as const
 export const GET_ISSUES_SUCCESS = "issues/GET_ISSUES_SUCCESS" as const
 export const GET_ISSUES_ERROR = "issues/GET_ISSUES_ERROR" as const
 
+export interface GetIssuesRequestActionType {
+  type: typeof GET_ISSUES_REQUEST
+}
+
 export const getIssuesRequestAction = () => {
   return {
     type: GET_ISSUES_REQUEST,
   }
+}
+
+export interface GetIssuesSuccessActionType {
+  type: typeof GET_ISSUES_SUCCESS
+  payload: SuccessIssueItemType[]
 }
 
 export const getIssuesSuccessAction = (payload: SuccessIssueItemType[]) => {
@@ -19,12 +28,19 @@ export const getIssuesSuccessAction = (payload: SuccessIssueItemType[]) => {
   }
 }
 
-export const getIssuesErrorAction = (payload: any) => {
+export interface GetIssuesErrorActionType {
+  type: typeof GET_ISSUES_ERROR
+  payload: string
+}
+
+export const getIssuesErrorAction = (payload: string) => {
   return {
     type: GET_ISSUES_ERROR,
     payload,
   }
 }
+
+export type IssuesActionType = GetIssuesRequestActionType | GetIssuesSuccessActionType | GetIssuesErrorActionType
 
 function* getIssuesData() {
   try {
