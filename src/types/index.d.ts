@@ -76,7 +76,7 @@ export interface IssueItemType {
 export interface SuccessIssueItemType {
   number: number
   title: string
-  createDate: Date
+  createdAt: Date
   comments: number
 }
 
