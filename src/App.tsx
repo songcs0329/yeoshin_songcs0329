@@ -2,20 +2,23 @@ import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "@reducers"
 import { useEffect } from "react"
 import { getIssuesRequestAction } from "@actions"
+import Loading from "@components/Loading"
+import ErrorPage from "@components/ErrorPage"
+import IssusesList from "@components/IssuesList"
 
 function App() {
-  const { isLoading, isError, dataList } = useSelector((state: RootState) => state.issues)
+  const { isLoading, errorMsg, list } = useSelector((state: RootState) => state.issues)
   const dispatch = useDispatch()
-  console.log(isLoading, isError, dataList)
+
   useEffect(() => {
     dispatch(getIssuesRequestAction())
   }, [dispatch])
 
-  if (isLoading) return <div>Loading...</div>
-  if (isError) return <div>{isError}</div>
+  if (isLoading) return <Loading />
+  if (errorMsg) return <ErrorPage errorMessage={errorMsg} />
   return (
     <div className="App">
-      <div>{JSON.stringify(dataList)}</div>
+      <IssusesList issuesList={list} />
     </div>
   )
 }
