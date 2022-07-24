@@ -35,8 +35,9 @@ export const LoadingEllipsis = styled.div`
   right: 0;
   top: 0;
   bottom: 0;
-  padding: 0 24px;
+  padding: 0 40px;
   z-index: 700;
+  background-color: var(--color-layer);
   > div {
     width: 100%;
     height: 12px;
