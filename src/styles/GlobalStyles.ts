@@ -4,11 +4,12 @@ import reset from "styled-reset"
 const GlobalStyles = createGlobalStyle`
 	${reset}
 	:root {
+		--color-black: #000;
 		--color-white: #fff;
 		--color-red: #fe4411;
 		--color-bg: #14171f;
-		--color-gray: #30363d;
-		--color-layer: rgba(0,0,0,0.5);
+		--color-gray: #21262d;
+		--color-layer: rgba(0,0,0,0.6);
 		--color-shaodw: rgba(0,0,0,0.1);
 	}
 	* {
@@ -16,7 +17,6 @@ const GlobalStyles = createGlobalStyle`
 		margin: 0;
 		box-sizing: border-box;
 		word-break: break-all;
-		color: var(--color-white);
 		overscroll-behavior: none;
 	}
 	html,
@@ -24,11 +24,17 @@ const GlobalStyles = createGlobalStyle`
 		overflow: auto;
 		height: 100%;
 		font-family: "Roboto";
-		background-color: var(--color-bg);
 		line-height: 1.3;
+		@media (prefers-color-scheme: dark) {
+			background-color: var(--color-bg);
+		}
 		* {
 			font-family: "Roboto";
 			font-size: 12px;
+			color: var(--color-black);
+			@media (prefers-color-scheme: dark) {
+				color: var(--color-white);
+			}
 		}
 	}
 	h1,
@@ -54,6 +60,10 @@ const GlobalStyles = createGlobalStyle`
 		border: 0;
 		background: none;
 		cursor: pointer;
+	}
+	pre {
+		word-break: break-all;
+		white-space: pre-wrap;
 	}
 	.hide {
 		position: absolute;
