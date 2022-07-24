@@ -1,10 +1,10 @@
-import { SuccessIssueItemType } from "@types"
+import { SortIssueItemType } from "@types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { IssueItemDesc } from "./styles"
 import { faCalendar, faComment } from "@fortawesome/free-solid-svg-icons"
 
 export interface IssueItemPropsType {
-  issueItem: SuccessIssueItemType
+  issueItem: SortIssueItemType
 }
 
 const IssueItem = ({ issueItem }: IssueItemPropsType) => {

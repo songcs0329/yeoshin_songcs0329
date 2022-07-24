@@ -73,7 +73,7 @@ export interface IssueItemType {
   state_reason: null
 }
 
-export interface SuccessIssueItemType {
+export interface SortIssueItemType {
   number: number
   title: string
   createdAt: Date

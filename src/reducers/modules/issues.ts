@@ -1,10 +1,10 @@
 import { GET_ISSUES_ERROR, GET_ISSUES_REQUEST, GET_ISSUES_SUCCESS, IssuesActionType } from "@actions"
-import { SuccessIssueItemType } from "@types"
+import { SortIssueItemType } from "@types"
 
 export interface IssuesStateType {
   isLoading: boolean
   errorMsg: string
-  list: [] | SuccessIssueItemType[]
+  list: [] | SortIssueItemType[]
 }
 
 const initialState: IssuesStateType = {

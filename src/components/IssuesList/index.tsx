@@ -1,9 +1,9 @@
-import { SuccessIssueItemType } from "@types"
+import { SortIssueItemType } from "@types"
 import IssueItem from "@components/IssueItem"
 import { IssuesListContainer, IssuesListWrapper } from "./styles"
 
 interface IssuesListPropsType {
-  issuesList: [] | SuccessIssueItemType[]
+  issuesList: [] | SortIssueItemType[]
 }
 
 const IssusesList = ({ issuesList }: IssuesListPropsType) => {

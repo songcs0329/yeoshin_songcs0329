@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects"
 import { asyncFetchIssues } from "@apis"
-import { SuccessIssueItemType, ErrorIssueItemType } from "@types"
+import { SortIssueItemType, ErrorIssueItemType } from "@types"
 
 export const GET_ISSUES_REQUEST = "issues/GET_ISSUES_REQUEST" as const
 export const GET_ISSUES_SUCCESS = "issues/GET_ISSUES_SUCCESS" as const
@@ -18,10 +18,10 @@ export const getIssuesRequestAction = () => {
 
 export interface GetIssuesSuccessActionType {
   type: typeof GET_ISSUES_SUCCESS
-  payload: SuccessIssueItemType[]
+  payload: SortIssueItemType[]
 }
 
-export const getIssuesSuccessAction = (payload: SuccessIssueItemType[]) => {
+export const getIssuesSuccessAction = (payload: SortIssueItemType[]) => {
   return {
     type: GET_ISSUES_SUCCESS,
     payload,
@@ -44,7 +44,7 @@ export type IssuesActionType = GetIssuesRequestActionType | GetIssuesSuccessActi
 
 function* getIssuesData() {
   try {
-    const sagaIssuesData: SuccessIssueItemType[] = yield call(asyncFetchIssues)
+    const sagaIssuesData: SortIssueItemType[] = yield call(asyncFetchIssues)
     yield put(getIssuesSuccessAction(sagaIssuesData))
   } catch (error) {
     let errorObject = error as ErrorIssueItemType

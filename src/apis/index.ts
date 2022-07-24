@@ -1,4 +1,4 @@
-import { IssueItemType, SuccessIssueItemType } from "@types"
+import { IssueItemType, SortIssueItemType } from "@types"
 import { changeDateFormat } from "@utils"
 
 export const asyncFetchIssues = async () => {
@@ -7,7 +7,7 @@ export const asyncFetchIssues = async () => {
     const data = await response.json()
 
     if (data.message) throw data
-    const sortData: SuccessIssueItemType[] = data
+    const sortData: SortIssueItemType[] = data
       .map((dataItem: IssueItemType) => {
         return {
           number: dataItem.number,
@@ -16,7 +16,7 @@ export const asyncFetchIssues = async () => {
           comments: dataItem.comments,
         }
       })
-      .sort((prev: SuccessIssueItemType, next: SuccessIssueItemType) => {
+      .sort((prev: SortIssueItemType, next: SortIssueItemType) => {
         if (prev.comments > next.comments) return -1
         if (prev.comments < next.comments) return 1
         return 0
