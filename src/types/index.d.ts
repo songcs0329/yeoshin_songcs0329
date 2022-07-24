@@ -74,10 +74,12 @@ export interface IssueItemType {
 }
 
 export interface SortIssueItemType {
+  id: number
   number: number
   title: string
-  createdAt: Date
+  created_at: Date
   comments: number
+  user: IssueItemUserType
 }
 
 export interface ErrorIssueItemType {

@@ -10,10 +10,15 @@ export const asyncFetchIssues = async () => {
     const sortData: SortIssueItemType[] = data
       .map((dataItem: IssueItemType) => {
         return {
+          id: dataItem.id,
           number: dataItem.number,
           title: dataItem.title,
-          createdAt: changeDateFormat(dataItem.created_at),
+          created_at: changeDateFormat(dataItem.created_at),
           comments: dataItem.comments,
+          user: {
+            login: dataItem.user.login,
+            avatar_url: dataItem.user.avatar_url,
+          },
         }
       })
       .sort((prev: SortIssueItemType, next: SortIssueItemType) => {

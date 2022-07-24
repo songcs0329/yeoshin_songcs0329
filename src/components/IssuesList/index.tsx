@@ -13,7 +13,7 @@ const IssusesList = ({ issuesList }: IssuesListPropsType) => {
         <h3>Github Issues</h3>
         <ol className="issues_list">
           {issuesList.map((issueItem) => {
-            return <IssueItem key={issueItem.number} issueItem={issueItem} />
+            return <IssueItem key={issueItem.id} issueItem={issueItem} />
           })}
         </ol>
       </IssuesListWrapper>
