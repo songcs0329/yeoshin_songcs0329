@@ -1,5 +1,5 @@
-import { issuesReducer } from "./modules/issues"
 import { combineReducers } from "redux"
+import { issuesReducer } from "./modules/issues"
 
 const rootReducer = combineReducers({
   issues: issuesReducer,

@@ -1,7 +1,7 @@
 import { SortIssueItemType } from "@types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { IssueItemBalloon, IssueItemUser } from "./styles"
 import { faCalendar, faComment } from "@fortawesome/free-solid-svg-icons"
+import { IssueItemBalloon, IssueItemUser } from "./styles"
 
 export interface IssueItemPropsType {
   issueItem: SortIssueItemType
