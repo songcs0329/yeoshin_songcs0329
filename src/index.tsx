@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { Provider } from "react-redux"
 import { applyMiddleware, createStore } from "redux"
+import { Provider } from "react-redux"
 import createSagaMiddleware from "redux-saga"
 import logger from "redux-logger"
 import rootReducer from "@reducers"
@@ -10,7 +10,9 @@ import GlobalStyles from "@styles/GlobalStyles"
 import App from "./App"
 
 const sagaMiddleWare = createSagaMiddleware()
-const store = createStore(rootReducer, applyMiddleware(logger, sagaMiddleWare))
+const enhancer =
+  process.env.NODE_ENV === "production" ? applyMiddleware(sagaMiddleWare) : applyMiddleware(logger, sagaMiddleWare)
+const store = createStore(rootReducer, enhancer)
 sagaMiddleWare.run(issuesDataSaga)
 
 ReactDOM.render(
