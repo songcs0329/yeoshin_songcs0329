@@ -94,7 +94,7 @@ src
   - [x] 액션 함수 타입 추가
   - [x] issues store state명 수정
 
-  - 22.07.24
+- 22.07.24
 
   - [x] 이슈 목록 리스트 id 항목 추가(고유키 값으로 사용)
   - [x] 이슈 목록 리스트 유저(user) 프로필 항목(login, avatar_url) 추가(유저 id, 아바타 이미지 표시)
@@ -102,3 +102,9 @@ src
   - [x] 전역 스타일 다크 모드 미디어 쿼리 추가
   - [x] Loading, ErrorPage 스타일 수정
   - [x] README 사용 라이브러리 관련 설명 추가
+
+- 22.07.25
+
+  - [x] redux middleware production 분기 처리
+  - [x] 파일별 import 순서 변경
+  - [x] 과제 제출
